@@ -28,23 +28,29 @@ Herramienta ultra ligera para clonación masiva de repositorios desde múltiples
 Scripts de apoyo (ubicados en `scripts/`):
 - `bash scripts/install.sh` para instalar manualmente.
 - `bash scripts/run.sh` para ejecutar manualmente después de instalar.
+- `bash scripts/test.sh` para pruebas rápidas.
 
-## ▶️ Uso Rápido
+## ▶️ Uso Rápido (Menú Único)
 
 ```bash
-./start.sh         # Menú interactivo (recomendado)
+./start.sh
 ```
 
-### Flujo Completo:
+Menú interactivo:
+- **1) Instalar dependencias**: crea/actualiza `venv`, instala requisitos y prepara `.env` (solo primera vez).
+- **2) Ejecutar aplicación**: lanza HydraClone.
+- **3) Ejecutar pruebas**: corre validaciones básicas.
 
-1. **Ejecutar start.sh** - Menú principal interactivo
-2. **Opción 1: Instalar** - Primero configura el entorno (solo primera vez)
-3. **Opción 2: Ejecutar** - Inicia HydraClone con banner animado
-4. **Ingresa URLs** - Pega URLs una por una (tipo: `done` para terminar)
-5. **Escaneo Automático** - Detecta plataformas
-6. **Autenticación** - Solicita credenciales si las necesita
-7. **Clonación Masiva** - Con animación de progreso
-8. **Reporte Final** - Genera archivo `.md` con resultados
+Ingreso de URLs:
+- Pega una URL por línea.
+- Finaliza con `done` **o** `d` (atajo corto).
+- Se validan URLs (`http` o `git@`), se detecta la plataforma y luego se solicita autenticación si hace falta.
+
+Flujo resumido:
+1. Ejecuta `./start.sh` y elige 1 (solo primera vez).
+2. Elige 2 para usar HydraClone.
+3. Ingresa URLs, termina con `d` o `done`, confirma con `s`.
+4. Observa progreso y se genera reporte `.md` en `reports/`.
 
 Ver detalles completos en [docs/STARTUP.md](docs/STARTUP.md)
 
@@ -99,14 +105,19 @@ Ver detalles completos en [docs/STRUCTURE.md](docs/STRUCTURE.md)
 ## 🎨 Banner HydraClone
 
 ```
-🐉 Welcome to HydraClone
+██╗  ██╗██╗   ██╗██████╗ ██████╗  █████╗ 
+██║  ██║╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+███████║ ╚████╔╝ ██║  ██║██████╔╝███████║
+██╔══██║  ╚██╔╝  ██║  ██║██╔══██╗██╔══██║
+██║  ██║   ██║   ██████╔╝██║  ██║██║  ██║
+╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 
-██╗  ██╗██╗   ██╗██╗███╗   ██╗ ██████╗ ██████╗ ██████╗ ███████╗
-██║  ██║██║   ██║██║████╗  ██║██╔════╝██╔═══██╗██╔══██╗██╔════╝
-███████║██║   ██║██║██╔██╗ ██║██║     ██║   ██║██║  ██║█████╗  
-██╔══██║██║   ██║██║██║╚██╗██║██║     ██║   ██║██║  ██║██╔══╝  
-██║  ██║╚██████╔╝██║██║ ████║╚██████╗╚██████╔╝██████╔╝███████╗
-╚═╝  ╚═╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝
+ ██████╗██╗      ██████╗ ███╗   ██╗███████╗
+██╔════╝██║     ██╔═══██╗████╗  ██║██╔════╝
+██║     ██║     ██║   ██║██╔██╗ ██║█████╗  
+██║     ██║     ██║   ██║██║╚██╗██║██╔══╝  
+╚██████╗███████╗╚██████╔╝██║ ╚████║███████╗
+ ╚═════╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 ```
 
 ## 💾 Configuración
