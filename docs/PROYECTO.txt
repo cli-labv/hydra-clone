@@ -1,6 +1,6 @@
 ╔══════════════════════════════════════════════════════════════╗
 ║                                                              ║
-║          🤖 CLONE MASTER CLI v1.0 - PROYECTO COMPLETO      ║
+║          🤖 HYDRACLONE CLI v2.0.0 - PROYECTO COMPLETO      ║
 ║                                                              ║
 ║         Clonación Masiva de Repositorios                     ║
 ║         Ultra Ligero • Multi-plataforma • Seguro             ║
@@ -53,7 +53,7 @@ hydra-clone/
    • GitHub: Token PAT + OAuth
    • GitLab: Token PAT + OAuth
    • Bitbucket: App Password
-   • Credenciales guardadas (~/.hydra-clone/)
+    • Credenciales guardadas (config/.credentials/)
    • Verificación automática
 
 ✅ CLONACIÓN CONCURRENTE
@@ -98,7 +98,7 @@ hydra-clone/
     source venv/bin/activate
     python main.py
 
-3️⃣  USAR CLONE MASTER
+3️⃣  USAR HYDRACLONE
     • Ver pantalla de bienvenida animada
     • Ingresar URLs de repositorios
     • Detecta plataformas automáticamente
@@ -122,7 +122,7 @@ Velocidad Clone:   Limitada por red
 
 WELCOME (Inicio):
   ╔════════════════════════════════════════╗
-  ║   🤖 HydraClone v1.0                 ║
+  ║   🤖 HydraClone v2.0.0               ║
   ║   Clonación Masiva de Repositorios     ║
   ║   Ultra Ligero • Multi-plataforma      ║
   ╚════════════════════════════════════════╝
@@ -171,15 +171,15 @@ Cambiar colores:       animations.py → style colors
 📝 ARCHIVOS GENERADOS
 ════════════════════════════════════════════════════════════════
 
-~/.hydra-clone/
-  └── credentials.json    # Credenciales guardadas
+config/.credentials/
+  └── credentials.json    # Credenciales guardadas (ignorado por git)
 
-~/clones/
+clones/FECHA_HORA/
   ├── github/repo1/
   ├── gitlab/repo2/
   └── bitbucket/repo3/
 
-~/.hydra-clone-reports/
+reports/
   └── clone-report_TIMESTAMP.md
 
 ✅ COMPLETADO Y LISTO PARA USAR
@@ -210,5 +210,4 @@ Opcional:
 
 ═══════════════════════════════════════════════════════════════════
 
-🚀 CLONE MASTER v1.0 - Hecho con ❤️
-
+🚀 HYDRACLONE v2.0.0 - Hecho con ❤️

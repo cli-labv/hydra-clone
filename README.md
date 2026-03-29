@@ -138,6 +138,7 @@ Disponibles:
 - `BITBUCKET_USER` - Usuario de Bitbucket
 
 **Nota:** Si no configuras tokens en `.env`, la aplicación te pedirá credenciales interactivamente.
+Esas credenciales se guardan en `config/.credentials/credentials.json` dentro del repositorio y están ignoradas por Git.
 
 ## 🛠️ Opciones Futuras
 

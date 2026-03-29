@@ -1,4 +1,4 @@
-# 🚀 CLONE MASTER CLI - GUÍA RÁPIDA
+# 🚀 HYDRACLONE CLI - GUÍA RÁPIDA
 
 ## Ubicación del Proyecto
 ```
@@ -84,7 +84,7 @@ bash run.sh
 
 Se guardan automáticamente en:
 ```
-~/.hydra-clone/credentials.json
+config/.credentials/credentials.json
 ```
 
 Primero que se solicite, elige:
@@ -102,7 +102,7 @@ Puedes obtenerlos en:
 ## 📍 Dónde se guardan los Clones
 
 ```
-~/clones/
+clones/FECHA_HORA/
 ├── github/
 │   ├── flask/
 │   ├── requests/
@@ -119,7 +119,7 @@ Puedes obtenerlos en:
 
 Se generan en:
 ```
-~/.hydra-clone-reports/clone-report_FECHA_HORA.md
+reports/clone-report_FECHA_HORA.md
 ```
 
 Contiene:

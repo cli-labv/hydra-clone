@@ -1,5 +1,5 @@
 """
-Módulo de animaciones para Clone Master
+Módulo de animaciones para HydraClone
 """
 
 import time
@@ -34,7 +34,7 @@ def welcome_animation() -> None:
     console.print()
     
     # Efecto de escritura del título
-    title_text = "🤖 Clone Master v1.0"
+    title_text = "🤖 HydraClone v2.0"
     typing_effect(title_text, speed=0.03, color="bright_cyan")
     
     console.print()
@@ -56,7 +56,7 @@ def welcome_animation() -> None:
     
     # Mensaje de bienvenida
     console.print()
-    welcome_msg = Text("¡Bienvenido a Clone Master!", style="bold bright_green")
+    welcome_msg = Text("¡Bienvenido a HydraClone!", style="bold bright_green")
     console.print(welcome_msg)
     
     # Checklist de inicialización con animación
@@ -166,4 +166,3 @@ def create_animated_progress_bar():
         TimeRemainingColumn(),
     )
     return progress
-

@@ -22,7 +22,7 @@ class ReportGenerator:
         self.output_dir = output_dir or REPORTS_DIR
         self.output_dir.mkdir(parents=True, exist_ok=True)
     
-    def generate_report(self, results: List[CloneResult], title: str = "Clone Master Report") -> Path:
+    def generate_report(self, results: List[CloneResult], title: str = "HydraClone Report") -> Path:
         """Generar reporte en Markdown"""
         
         successful = [r for r in results if r.success]
@@ -107,7 +107,7 @@ class ReportGenerator:
             report += "*Todos los repositorios se clonaron exitosamente.*\n"
         
         report += "\n---\n\n## 📋 Detalles Técnicos\n\n"
-        report += f"- **Herramienta:** Clone Master CLI v1.0\n"
+        report += f"- **Herramienta:** HydraClone CLI v2.0.0\n"
         report += f"- **Repositorios Procesados:** {total}\n"
         report += f"- **Plataformas Detectadas:** {self._get_platforms(successful + failed)}\n"
         

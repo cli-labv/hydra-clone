@@ -11,6 +11,11 @@ from datetime import datetime
 import time
 from rich.console import Console
 
+# Config
+import sys
+sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+from config import CLONES_DIR  # Base dentro del proyecto
+
 console = Console()
 
 
@@ -30,7 +35,7 @@ class CloneManager:
     """Gestor de clonación de repositorios"""
     
     def __init__(self, base_dir: Path = None, max_concurrent: int = 8):
-        self.base_dir = base_dir or Path.home() / "clones"
+        self.base_dir = base_dir or CLONES_DIR
         self.max_concurrent = max_concurrent
         self.base_dir.mkdir(parents=True, exist_ok=True)
         self.results: List[CloneResult] = []
