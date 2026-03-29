@@ -14,14 +14,15 @@ from rich.panel import Panel
 from rich.text import Text
 
 console = Console()
-CONFIG_DIR = Path.home() / ".hydra-clone"
-CONFIG_DIR.mkdir(exist_ok=True)
-CREDENTIALS_FILE = CONFIG_DIR / "credentials.json"
 
 # Importar configuración
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
-from config import GITHUB_TOKEN, GITLAB_TOKEN, BITBUCKET_TOKEN, BITBUCKET_USER
+from config import PROJECT_ROOT, GITHUB_TOKEN, GITLAB_TOKEN, BITBUCKET_TOKEN, BITBUCKET_USER
+
+CONFIG_DIR = PROJECT_ROOT / "config" / ".credentials"
+CONFIG_DIR.mkdir(parents=True, exist_ok=True)
+CREDENTIALS_FILE = CONFIG_DIR / "credentials.json"
 
 
 class AuthManager:

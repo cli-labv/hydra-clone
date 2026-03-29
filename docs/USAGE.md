@@ -116,7 +116,7 @@ Se genera automáticamente un archivo `.md`:
 ```
 📄 Reporte Generado
 ════════════════════════════════════════
-Ubicación: /home/user/.hydra-clone-reports/clone-report_2024-03-24_00-30-15.md
+Ubicación: reports/clone-report_2024-03-24_00-30-15.md
 
 ✓ Exitosos: 5
 ✗ Fallidos: 0
@@ -200,7 +200,7 @@ URL 5: done
 
 **Resultado:**
 - 4 repositorios clonados
-- En `~/clones/github/`
+- En `clones/FECHA_HORA/github/`
 - Reporte con estadísticas
 
 ### Ejemplo 2: Mix de Plataformas
@@ -245,7 +245,7 @@ Solución:
 Solución:
 1. Verifica que tengas acceso al repositorio
 2. Recrea el token con permisos correctos
-3. Elimina credenciales guardadas: rm ~/.hydra-clone/credentials.json
+3. Elimina credenciales guardadas: rm config/.credentials/credentials.json
 ```
 
 ### Error: "Repository not found"
@@ -273,9 +273,9 @@ Solución:
 ❌ Problema: Al reiniciar pierdes las credenciales
 
 Solución (Normal):
-Las credenciales se guardan en ~/.hydra-clone/credentials.json
+Las credenciales se guardan en config/.credentials/credentials.json
 Si no se guardan automáticamente:
-1. Verifica permisos de carpeta: ~/.hydra-clone/
+1. Verifica permisos de carpeta: config/.credentials/
 2. Intenta crear la carpeta manualmente
 3. Verifica permisos de lectura/escritura
 ```
@@ -285,24 +285,21 @@ Si no se guardan automáticamente:
 ## 📁 Estructura de Carpetas Generadas
 
 ```
-~/
-├── clones/                    # Directorio base
-│   ├── github/
-│   │   ├── flask/
-│   │   ├── requests/
-│   │   └── ...
-│   ├── gitlab/
-│   │   ├── gitlab/
-│   │   └── ...
-│   └── bitbucket/
-│
-├── .hydra-clone/             # Config y credenciales
-│   └── credentials.json       # ⚠️ No compartir
-│
-└── .hydra-clone-reports/     # Reportes
-    ├── clone-report_2024-03-24_00-30-15.md
-    ├── clone-report_2024-03-24_02-15-42.md
-    └── ...
+clones/FECHA_HORA/            # Directorio base (dentro del repo)
+├── github/
+│   ├── flask/
+│   ├── requests/
+│   └── ...
+├── gitlab/
+│   └── ...
+└── bitbucket/
+
+config/.credentials/          # Config y credenciales
+└── credentials.json          # ⚠️ No compartir
+
+reports/                      # Reportes
+├── clone-report_2024-03-24_00-30-15.md
+└── ...
 ```
 
 ---
@@ -313,7 +310,7 @@ Si no se guardan automáticamente:
 Edita `main.py`:
 ```python
 self.clone_manager = CloneManager(
-    base_dir=Path("/ruta/personalizada/clones"),
+    base_dir=Path("clones/personalizado"),  # Por defecto usa clones/FECHA_HORA/
     max_concurrent=8
 )
 ```

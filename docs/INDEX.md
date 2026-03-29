@@ -1,4 +1,4 @@
-# 📑 ÍNDICE DE ARCHIVOS - CLONE MASTER CLI v1.0
+# 📑 ÍNDICE DE ARCHIVOS - HYDRACLONE CLI v2.0.0
 
 ## 🎯 PUNTO DE INICIO
 
@@ -41,10 +41,10 @@ hydra-clone/
 │  ├─ requirements.txt    (164 B)   ← Dependencias
 │  └─ venv/               (200+ MB) ← Entorno virtual
 │
-└─ 🔗 DIRECTORIOS EXTERNOS (generados automáticamente)
-   ├─ ~/.hydra-clone/              ← Config (credenciales)
-   ├─ ~/clones/                     ← Repositorios clonados
-   └─ ~/.hydra-clone-reports/      ← Reportes generados
+└─ 🔗 DIRECTORIOS GENERADOS
+   ├─ config/.credentials/         ← Credenciales (ignorado por git)
+   ├─ clones/YYYY-MM-DD_HH-MM-SS/  ← Repositorios clonados (dentro del repo)
+   └─ reports/                     ← Reportes generados
 ```
 
 ---
@@ -55,7 +55,7 @@ hydra-clone/
 
 #### `main.py` (9.4 KB) - CLI Principal
 **Responsabilidad:** Orquestar todo el flujo del programa
-- Clase `CloneMasterCLI` que coordina todo
+- Clase `HydraCloneCLI` que coordina todo
 - Entrada interactiva de URLs
 - Detección de plataformas
 - Verificación de autenticación
@@ -78,7 +78,7 @@ hydra-clone/
 - Clase `AuthManager` que maneja todo
 - Autenticación GitHub, GitLab, Bitbucket
 - Token PAT, OAuth, App Passwords
-- Guardar/cargar credenciales (~/.hydra-clone/)
+- Guardar/cargar credenciales (config/.credentials/)
 - Verificar autenticación
 
 **Modificar si:** Quieres agregar más plataformas o cambiar auth
@@ -232,7 +232,7 @@ bash test.sh
    ↓
 8. Genera reporte en MD
    ↓
-9. ¡Listo! Repositorios clonados en ~/clones/
+9. ¡Listo! Repositorios clonados en clones/FECHA_HORA/ (dentro del repo)
 ```
 
 ---
@@ -289,27 +289,27 @@ Archivo para posibles mejoras:
 
 ### Credenciales
 ```
-~/.hydra-clone/credentials.json
+config/.credentials/credentials.json
 ```
 Contiene: tokens, usernames, URLs (cifrados en versión futura)
 
 ### Repositorios Clonados
 ```
-~/clones/github/repo1/
-~/clones/gitlab/repo2/
-~/clones/bitbucket/repo3/
+clones/FECHA_HORA/github/repo1/
+clones/FECHA_HORA/gitlab/repo2/
+clones/FECHA_HORA/bitbucket/repo3/
 ```
 
 ### Reportes
 ```
-~/.hydra-clone-reports/clone-report_2024-03-24_00-30-15.md
+reports/clone-report_2024-03-24_00-30-15.md
 ```
 
 ---
 
 ## 📝 NOTAS IMPORTANTES
 
-1. **Credenciales:** Se guardan localmente en `~/.hydra-clone/`. No compartir.
+1. **Credenciales:** Se guardan localmente en `config/.credentials/`. No compartir.
 2. **Permisos:** Los scripts necesitan `chmod +x` para ejecutarse.
 3. **Python:** Requiere 3.8+. Usar `python3` en Linux/Mac.
 4. **Git:** Debe estar instalado y configurado.

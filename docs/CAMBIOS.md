@@ -82,10 +82,10 @@ BITBUCKET_USER=               # Usuario de Bitbucket
 
 ### 📂 Cambios en Directorios de Clonación
 
-#### Estructura anterior:
+#### Estructura anterior (v1.x):
 ```
-/home/dev/clones/github/repo1/
-/home/dev/clones/github/repo2/
+~/clones/github/repo1/
+~/clones/github/repo2/
 ```
 
 #### Estructura nueva:
@@ -182,13 +182,13 @@ ls -la reports/
 # clone-report_2026-03-25_14-22-15.md
 ```
 
-### 🔄 Migración desde v1.0.0
+### 🔄 Migración desde v1.x
 
-Si tienes repositorios clonados en la versión anterior en `/home/dev/clones/`, debes:
+Si tienes repositorios clonados en la versión anterior en `~/clones/`, debes:
 
-1. Copiarlos manualmente a la nueva ubicación:
+1. Copiarlos manualmente a la nueva ubicación dentro del proyecto:
 ```bash
-cp -r /home/dev/clones/github/* clones/2026-03-25_00-00-00/github/
+cp -r ~/clones/github/* clones/2026-03-25_00-00-00/github/
 ```
 
 2. O generar reportes de los clones anteriores manualmente
@@ -204,10 +204,10 @@ cp -r /home/dev/clones/github/* clones/2026-03-25_00-00-00/github/
 
 ### ⚠️ Cambios que Requieren Atención
 
-- **IMPORTANTE**: Cambio de ubicación de clones de `/home/dev/clones/` a `proyecto/clones/TIMESTAMP/`
+- **IMPORTANTE**: Cambio de ubicación de clones de `~/clones/` a `proyecto/clones/TIMESTAMP/`
 - **IMPORTANTE**: Nuevo sistema de variables de entorno (`.env`)
 - Actualizar scripts que referencias rutas antiguas
-- Actualizar documentación externa que mencione `/home/dev/clones/`
+- Actualizar documentación externa que mencione `~/clones/`
 
 ### 🔮 Roadmap Futuro
 

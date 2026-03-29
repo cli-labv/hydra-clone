@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Script de prueba de Clone Master CLI
+# Script de prueba de HydraClone CLI
 
-cd /home/dev/leo/clone-master
+cd "$(dirname "$0")/.."
 
-echo "🧪 Probando Clone Master CLI..."
+echo "🧪 Probando HydraClone CLI..."
 echo ""
 
 # Activar venv
@@ -20,6 +20,6 @@ echo ""
 echo "✅ Todos los módulos se cargan correctamente"
 echo ""
 echo "Para usar la herramienta, ejecuta:"
-echo "  cd /home/dev/leo/clone-master"
+echo "  cd $(pwd)"
 echo "  source venv/bin/activate"
 echo "  python main.py"

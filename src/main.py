@@ -26,7 +26,7 @@ from config import CLONES_DIR, REPORTS_DIR
 console = Console()
 
 
-class CloneMasterCLI:
+class HydraCloneCLI:
     """Clase principal del CLI"""
     
     def __init__(self):
@@ -259,7 +259,7 @@ class CloneMasterCLI:
 
 def main():
     """Punto de entrada principal"""
-    cli = CloneMasterCLI()
+    cli = HydraCloneCLI()
     
     try:
         asyncio.run(cli.run())
